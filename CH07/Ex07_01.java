@@ -1,4 +1,4 @@
-/** Assign grades
+/** Assign Grades
  *  Write a program that reads student scores, gets the best score, and then
  *  assigns grades based on the following scheme:
  *
@@ -49,7 +49,7 @@ public class Ex07_01 {
       
    }
    
-   /** Method returns the best grade */
+    /** Method returns the best grade */
    public static int findBestGrade(int[] grades) {
       int bestGrade = grades[0];  // initialize bestGrade as first grade in array
       // Loop thru array to find the best grade
