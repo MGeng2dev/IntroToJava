@@ -18,19 +18,19 @@ public class Ex08_07 {
          {5.5, 4, -0.5}};
       
       // Call method & print result
-      int[] result = nearestPoints(points);
-      System.out.print("Nearest points are index " + result[0] + " and index " + result[1]);
-      System.out.print("\nThe distance is: " + calcDistance(4, 1, 1, 3.5, 2, -1));
+      double[][] result = nearestPoints(points);
+      System.out.print("Nearest points are (" + result[0][0] + ", " + result[0][1] + ", " +
+         result[0][2] + ") and (" + result[1][0] + ", " + result[1][1] + ", " + 
+         result[1][2] + ")");
    }
    
     /** Method returns indices of nearest points */
-   public static int[] nearestPoints(double[][] points) {
+   public static double[][] nearestPoints(double[][] points) {
       // Assume distance between row 1 and row 2 is the minimum
-      int minDistanceIndex1 = 0;
-      int minDistanceIndex2 = 1;
-      double minDistance = 10000000;
-      //double minDistance = calcDistance(points[0][0], points[0][1], points[0][2], 
-         //points[1][0], points[1][1], points[1][2]);
+      int index1 = 0;
+      int index2 = 1;
+      double minDistance = calcDistance(points[0][0], points[0][1], points[0][2], 
+         points[1][0], points[1][1], points[1][2]);
    
       // Compare all points
       for (int i = 0; i < points.length - 1; i++) {
@@ -39,14 +39,16 @@ public class Ex08_07 {
                points[j][0], points[j][1], points[j][2]);
             if (distance < minDistance) {
                minDistance = distance;
-               minDistanceIndex1 = i;
-               minDistanceIndex2 = j;
+               index1 = i;
+               index2 = j;
             }
          }
       }
       
       // Put points in an array to return
-      int[] result = {minDistanceIndex1, minDistanceIndex2};
+      double[][] result = {
+         {points[index1][0], points[index1][1], points[index1][2]},
+         {points[index2][0], points[index2][1], points[index2][2]}};
       return result;
    }
          
