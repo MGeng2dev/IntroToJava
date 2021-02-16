@@ -57,7 +57,7 @@ public class Ex08_26 {
       }
       
       // Sort rows 
-      for (int k = 0; k < mSorted.length; k++) {  // k is the row index
+      for (int k = 0; k < mSorted.length; k++) {  // k is the current row index
       
          for (int i = 0; i < mSorted.length - 1; i++) {  // i is the current element in the row
             double currentMin = mSorted[k][i];
@@ -70,7 +70,7 @@ public class Ex08_26 {
                }
             }
             
-            // swap m[k][i] with currentMin if necessary
+            // swap mSorted[k][i] with currentMin if necessary
             if (currentMinIndex != i) {
                mSorted[k][currentMinIndex] = mSorted[k][i];
                mSorted[k][i] = currentMin;
